@@ -21,8 +21,16 @@ getSettings <- function(type, data,...){
   focusDropdown <- args$focusDropdown %||% FALSE
   attributes <- args$attributes %||% NULL
 
+  if(type == "tree_group"){
+    vars <- c("id", "group", "size", "color") # add vars to opts
+    data_names <- as.list(names(data))
+    names(data_names) <- vars[1:length(data_names)]
+    settings <- list(
+      data_names = data_names
+    )
+  }
   if(type == "tree"){
-    vars <- c("id","size","color") # add vars to opts
+    vars <- c("id", "size", "color") # add vars to opts
     data_names <- as.list(names(data))
     names(data_names) <- vars[1:length(data_names)]
     settings <- list(

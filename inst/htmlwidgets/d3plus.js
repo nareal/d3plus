@@ -24,6 +24,9 @@ HTMLWidgets.widget({
         if(d3plusType == "tree"){
             draw_tree(el,x,d3plus);
         }
+        if(d3plusType == "tree_group"){
+            draw_tree_group(el,x,d3plus);
+        }
         if(d3plusType == "lines"){
             draw_lines(el,x,d3plus)
         }
@@ -50,6 +53,22 @@ HTMLWidgets.widget({
                 .data(sample_data) // data to use with the visualization
                 .type("tree_map")   // visualization type
                 .id(id) // nesting keys
+                .size(size)         // key name to size bubbles
+                .color(color)
+                .draw()
+        }
+
+        function draw_tree_group(el, x, d3plus){
+            var sample_data = HTMLWidgets.dataframeToD3(x.data);
+            var id = x.settings.data_names.id;
+            var size = x.settings.data_names.size;
+            var group = x.settings.data_names.group;
+            var color = x.settings.data_names.color;
+            d3plus
+                .container("#" + vizId) // container DIV to hold the visualization
+                .data(sample_data) // data to use with the visualization
+                .type("tree_map")   // visualization type
+                .id([group, id]) // nesting keys
                 .size(size)         // key name to size bubbles
                 .color(color)
                 .draw()
