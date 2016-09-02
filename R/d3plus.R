@@ -32,7 +32,7 @@ d3plus <- function(type, data, width = NULL, height = NULL,...) {
 #' Widget output function for use in Shiny
 #'
 #' @export
-d3plusOutput <- function(outputId, width = '100%', height = '500px'){
+d3plusOutput <- function(outputId, width = '100%', height = '100%'){
   shinyWidgetOutput(outputId, 'd3plus', width, height, package = 'd3plus')
 }
 
