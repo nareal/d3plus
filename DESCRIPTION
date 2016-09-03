@@ -1,7 +1,7 @@
 Package: d3plus
 Title: R Htmlwidget for d3plus (http://d3plus.org)
-Version: 0.0.1
-Date: 2015-03-20
+Version: 0.0.2
+Date: 2016-09-03
 Author: Juan Pablo Marin Diaz
 Maintainer: Juan Pablo Marín Díaz <jpmarindiaz@gmail.com>
 Description: R Htmlwidget for d3plus (http://d3plus.org)
